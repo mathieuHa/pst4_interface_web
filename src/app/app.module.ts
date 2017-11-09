@@ -11,6 +11,9 @@ import { EquipmentComponent } from './equipment/equipment.component';
 import { VulnerabilityComponent } from './vulnerability/vulnerability.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material'
     HttpClientModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    NgbModule.forRoot()
 ],
   providers: [],
   bootstrap: [AppComponent]

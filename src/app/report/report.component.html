@@ -1,9 +1,20 @@
 
   <div class="card border-dark">
     <div class="card-body">
-      <h4 class="card-title text-success">
-        report works!
-      </h4>
+      <div class="row">
+        <div class="col">
+          <h4 class="card-title text-success">
+            report works!
+          </h4>
+        </div>
+        <div class="col">
+          <button class="btn btn-light" (click)="open(content)">Afficher le Json Brut</button>
+        </div>
+      </div>
+
+
+
+
       <p class="card-text">
         Version : {{report.version}}
       </p><br>
@@ -15,3 +26,18 @@
 
     </div>
   </div>
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Rapport sous format JSON</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      {{report|json}}
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    </div>
+  </ng-template>

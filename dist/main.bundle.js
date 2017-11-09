@@ -95,7 +95,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\n  <h1>PST4 Super Interface</h1>\n</div>\n\n<h2>Affichage d'un Rapport</h2>\n<br>\n<div *ngIf=\"show;else loading\">\n  <app-report [report]=\"report\"></app-report>\n</div>\n<ng-template #loading><mat-progress-spinner></mat-progress-spinner>\n</ng-template>\n\n\n"
+module.exports = "<div class=\"jumbotron\">\n  <h1>PST4 Super Interface</h1>\n</div>\n\n<h2>Affichage d'un Rapport</h2>\n<br>\n\n\n\n<div *ngIf=\"show;else loading\">\n  <app-report [report]=\"report\"></app-report>\n</div>\n<ng-template #loading><mat-progress-spinner></mat-progress-spinner>\n</ng-template>\n\n\n\n\n"
 
 /***/ }),
 
@@ -120,7 +120,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = (function () {
     function AppComponent(http) {
         this.http = http;
-        this.title = 'app  aa';
         this.show = false;
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -136,7 +135,7 @@ var AppComponent = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+            styles: [__webpack_require__("../../../../../src/app/app.component.css")],
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], AppComponent);
@@ -164,12 +163,14 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__vulnerability_vulnerability_component__ = __webpack_require__("../../../../../src/app/vulnerability/vulnerability.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -201,7 +202,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_11__angular_material__["b" /* MatProgressSpinnerModule */],
-                __WEBPACK_IMPORTED_MODULE_11__angular_material__["a" /* MatProgressBarModule */]
+                __WEBPACK_IMPORTED_MODULE_11__angular_material__["a" /* MatProgressBarModule */],
+                __WEBPACK_IMPORTED_MODULE_12__ng_bootstrap_ng_bootstrap__["c" /* NgbModule */].forRoot()
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
@@ -269,7 +271,7 @@ var EquipmentComponent = (function () {
             selector: 'app-equipment',
             template: __webpack_require__("../../../../../src/app/equipment/equipment.component.html"),
             styles: [__webpack_require__("../../../../../src/app/equipment/equipment.component.css")],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewEncapsulation */].None
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
         __metadata("design:paramtypes", [])
     ], EquipmentComponent);
@@ -335,7 +337,7 @@ var NetworkComponent = (function () {
             selector: 'app-network',
             template: __webpack_require__("../../../../../src/app/network/network.component.html"),
             styles: [__webpack_require__("../../../../../src/app/network/network.component.css")],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewEncapsulation */].None
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
         __metadata("design:paramtypes", [])
     ], NetworkComponent);
@@ -367,7 +369,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/report/report.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"card border-dark\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title text-success\">\n        report works!\n      </h4>\n      <p class=\"card-text\">\n        Version : {{report.version}}\n      </p><br>\n      <app-time [time]=\"report.time\"></app-time><br>\n      <app-stat [stats]=\"report.stats\"></app-stat><br>\n      <app-network [networks]=\"report.networks\"></app-network><br>\n      <app-equipment [equipments]=\"report.equipments\"></app-equipment><br>\n      <app-vulnerability [vulnerabilities]=\"report.vulnerabilities\"></app-vulnerability><br>\n\n    </div>\n  </div>\n"
+module.exports = "\n  <div class=\"card border-dark\">\n    <div class=\"card-body\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <h4 class=\"card-title text-success\">\n            report works!\n          </h4>\n        </div>\n        <div class=\"col\">\n          <button class=\"btn btn-light\" (click)=\"open(content)\">Afficher le Json Brut</button>\n        </div>\n      </div>\n\n\n\n\n      <p class=\"card-text\">\n        Version : {{report.version}}\n      </p><br>\n      <app-time [time]=\"report.time\"></app-time><br>\n      <app-stat [stats]=\"report.stats\"></app-stat><br>\n      <app-network [networks]=\"report.networks\"></app-network><br>\n      <app-equipment [equipments]=\"report.equipments\"></app-equipment><br>\n      <app-vulnerability [vulnerabilities]=\"report.vulnerabilities\"></app-vulnerability><br>\n\n    </div>\n  </div>\n\n  <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n    <div class=\"modal-header\">\n      <h4 class=\"modal-title\">Rapport sous format JSON</h4>\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n        <span aria-hidden=\"true\">&times;</span>\n      </button>\n    </div>\n    <div class=\"modal-body\">\n      {{report|json}}\n    </div>\n    <div class=\"modal-footer\">\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Close click')\">Close</button>\n    </div>\n  </ng-template>\n"
 
 /***/ }),
 
@@ -378,6 +380,7 @@ module.exports = "\n  <div class=\"card border-dark\">\n    <div class=\"card-bo
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReportComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Classes_Report__ = __webpack_require__("../../../../../src/app/Classes/Report.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -389,11 +392,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var ReportComponent = (function () {
-    function ReportComponent() {
+    function ReportComponent(modalService) {
+        this.modalService = modalService;
     }
     ReportComponent.prototype.ngOnInit = function () {
         console.log('it works');
+    };
+    ReportComponent.prototype.open = function (content) {
+        var _this = this;
+        this.modalService.open(content).result.then(function (result) {
+            _this.closeResult = "Closed with: " + result;
+        }, function (reason) {
+            _this.closeResult = "Dismissed " + _this.getDismissReason(reason);
+        });
+    };
+    ReportComponent.prototype.getDismissReason = function (reason) {
+        if (reason === __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["a" /* ModalDismissReasons */].ESC) {
+            return 'by pressing ESC';
+        }
+        else if (reason === __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["a" /* ModalDismissReasons */].BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        }
+        else {
+            return "with: " + reason;
+        }
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Input */])(),
@@ -404,9 +428,9 @@ var ReportComponent = (function () {
             selector: 'app-report',
             template: __webpack_require__("../../../../../src/app/report/report.component.html"),
             styles: [__webpack_require__("../../../../../src/app/report/report.component.css")],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewEncapsulation */].None
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["b" /* NgbModal */]])
     ], ReportComponent);
     return ReportComponent;
 }());
@@ -472,7 +496,7 @@ var StatComponent = (function () {
             selector: 'app-stat',
             template: __webpack_require__("../../../../../src/app/stat/stat.component.html"),
             styles: [__webpack_require__("../../../../../src/app/stat/stat.component.css")],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewEncapsulation */].None
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
         __metadata("design:paramtypes", [])
     ], StatComponent);
@@ -541,7 +565,7 @@ var TimeComponent = (function () {
             selector: 'app-time',
             template: __webpack_require__("../../../../../src/app/time/time.component.html"),
             styles: [__webpack_require__("../../../../../src/app/time/time.component.css")],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewEncapsulation */].None
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
         __metadata("design:paramtypes", [])
     ], TimeComponent);
@@ -607,7 +631,7 @@ var VulnerabilityComponent = (function () {
             selector: 'app-vulnerability',
             template: __webpack_require__("../../../../../src/app/vulnerability/vulnerability.component.html"),
             styles: [__webpack_require__("../../../../../src/app/vulnerability/vulnerability.component.css")],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewEncapsulation */].None
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
         __metadata("design:paramtypes", [])
     ], VulnerabilityComponent);
@@ -644,7 +668,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
