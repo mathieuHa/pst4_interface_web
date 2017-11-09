@@ -1,0 +1,31 @@
+<div class="card border-primary">
+  <div class="card-header">
+    time works
+  </div>
+  <div class="card-body text-primary">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card-body">
+            Début : {{time.start|date}}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            Fin   : {{time.end|date}}
+          </div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-3">
+        <div class="card-body">
+          Avancement : {{time.progress}} %
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="card-body">
+          <mat-progress-bar mode="determinate" value={{time.progress}}></mat-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

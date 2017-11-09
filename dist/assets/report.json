@@ -1,0 +1,30 @@
+{
+  "report": {
+      "version": "1.0",
+      "time": {
+        "start": "1508156711",
+        "end": "1508160360",
+        "progress": "100"
+      },
+
+      "stats": {
+        "networks": "1",
+        "equipments": "1",
+        "vulnerabilities": "2"
+      },
+
+      "networks": [
+        { "name": "elohellisreal", "type": "wifi", "equipments": "1" }
+      ],
+
+      "equipments": [
+        { "name": "PC de Borgo", "type": "computer" }
+      ],
+
+      "vulnerabilities": [
+        { "name": "SQL Injection", "find": "1", "exploit" : "1" },
+        { "name": "HTTP NULL BYTE", "find": "0", "exploit" : "0" },
+        { "name": "XSS", "find": "1", "exploit" : "1" }
+      ]
+	}
+}

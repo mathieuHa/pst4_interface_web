@@ -1,0 +1,26 @@
+<div class="card border-success">
+  <div class="card-header">
+    network works!
+  </div>
+  <div class="card-body text-success">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Type</th>
+        <th scope="col">Equipements</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let n of networks; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{ n.name }}</td>
+        <td>{{ n.type }}</td>
+        <td>{{ n.equipments }}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

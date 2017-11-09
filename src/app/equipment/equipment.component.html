@@ -1,0 +1,24 @@
+<div class="card border-danger">
+  <div class="card-header">
+    equipment works!
+  </div>
+  <div class="card-body text-danger">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Type</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let e of equipments; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{ e.name }}</td>
+        <td>{{ e.type }}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

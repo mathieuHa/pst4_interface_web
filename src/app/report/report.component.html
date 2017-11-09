@@ -1,0 +1,17 @@
+
+  <div class="card border-dark">
+    <div class="card-body">
+      <h4 class="card-title text-success">
+        report works!
+      </h4>
+      <p class="card-text">
+        Version : {{report.version}}
+      </p><br>
+      <app-time [time]="report.time"></app-time><br>
+      <app-stat [stats]="report.stats"></app-stat><br>
+      <app-network [networks]="report.networks"></app-network><br>
+      <app-equipment [equipments]="report.equipments"></app-equipment><br>
+      <app-vulnerability [vulnerabilities]="report.vulnerabilities"></app-vulnerability><br>
+
+    </div>
+  </div>
